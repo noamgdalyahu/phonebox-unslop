@@ -954,7 +954,7 @@ public sealed partial class ConfigStore(string path)
         c.OpenCode.TimeoutSec = Math.Clamp(c.OpenCode.TimeoutSec, 10, 3600);
         c.OpenCode.AlwaysCountdownSec = Math.Clamp(c.OpenCode.AlwaysCountdownSec, 0, 60);
         // the original project was the old default: a saved copy of it moves to this fork, so an update never replaces this build with the original
-        if (string.IsNullOrWhiteSpace(c.Updates.Repo) || c.Updates.Repo.Trim().Equals("noamgdalyahu/phonebox-unslop", StringComparison.OrdinalIgnoreCase)) c.Updates.Repo = "noamgdalyahu/phonebox-unslop";
+        if (string.IsNullOrWhiteSpace(c.Updates.Repo) || c.Updates.Repo.Trim().Equals("ersinkoc/phonebox", StringComparison.OrdinalIgnoreCase)) c.Updates.Repo = "noamgdalyahu/phonebox-unslop";
         c.Lan.Port = Math.Clamp(c.Lan.Port, 1024, 65535);
         if (string.IsNullOrWhiteSpace(c.Lan.Token)) c.Lan.Token = NewToken();
         if (string.IsNullOrWhiteSpace(c.Lan.WebhookToken)) c.Lan.WebhookToken = NewToken();
