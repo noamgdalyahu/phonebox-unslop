@@ -17,8 +17,8 @@ android {
         applicationId = "net.oxog.phonebox.deskpanel"
         minSdk = 21 // Android 5.0; see CONTRIBUTING.md before changing it
         targetSdk = 35
-        versionCode = 53
-        versionName = "0.9.32"
+        versionCode = 54
+        versionName = "0.9.33"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
