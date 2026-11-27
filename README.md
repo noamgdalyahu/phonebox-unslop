@@ -28,6 +28,19 @@
   <a href="docs/README.zh-Hant.md">中文（繁體）</a>
 </p>
 
+> **PhoneBox Unslop** is a restyled fork of [PhoneBox](https://github.com/ersinkoc/phonebox) by ersinkoc, released under the same MIT license (see [LICENSE](LICENSE)). It changes how the phone panel and the settings page look (sentence-case labels, no gradient washes or glows, lighter type, neutral colors) and nothing else. All credit for the app goes to the original author.
+
+## Download this version
+
+You need a Windows PC and an Android phone (Android 6 or later).
+
+1. Download both files from the **[latest release](https://github.com/noamgdalyahu/phonebox-unslop/releases/latest)**: `PhoneBox-<version>.apk` (the phone) and `PhoneBoxAgent-<version>-win-x64.zip` (the PC).
+2. **PC:** unzip the agent anywhere and run `PhoneBoxAgent.exe`. It lives in the tray (right-click the tray icon > Quit to close it). Its settings are at <http://127.0.0.1:8765>. The agent is not code-signed, so Windows SmartScreen may warn: choose *More info > Run anyway*.
+3. **Phone:** open the APK and allow "install unknown apps" for the app you opened it from. Then connect the phone to the PC over USB (turn on USB debugging) or over Wi-Fi: in the PC settings go to *General > Wi-Fi & Tailscale > Pair a phone over Wi-Fi* and scan the QR code. Allow Private networks only in the Windows firewall prompt. Full steps are in [docs/SETUP.md](docs/SETUP.md).
+4. **Important:** in the PC settings turn off *General > Updates > automatic updates*. Otherwise the agent updates itself from the original project's releases and replaces this restyled version.
+
+Only the agent for Windows x64 and the Android app are published here. To build everything yourself (any system), see [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+
 <p align="center"><b>Turn an old Android phone into a desk panel for your computer.</b><br>
 PC stats, AI coding sessions, music and touch controls over USB or Wi-Fi.<br>
 Windows, Linux and macOS. No root, PhoneBox account or cloud service required.</p>
