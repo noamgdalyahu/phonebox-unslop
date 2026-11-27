@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Look: slightly rounder corners in the phone app (4 to 6 px and 6 to 8 px).
+
 ## 0.9.32 — 2026-11-27
 
 This is **PhoneBox Unslop**, a restyled fork of PhoneBox (MIT). It looks for updates, links to downloads and hosts its
