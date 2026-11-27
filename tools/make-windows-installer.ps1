@@ -28,14 +28,16 @@ $notices = Join-Path (Split-Path $exePath) 'THIRD-PARTY-NOTICES.txt'
 if (-not (Test-Path -LiteralPath $notices)) { throw "THIRD-PARTY-NOTICES.txt is missing next to $exePath" }
 # The only loose DLL next to the self-contained single-file agent is aspnetcorev2_inprocess.dll, the ASP.NET Core module for
 # hosting under IIS; the agent runs on Kestrel and never loads it, which test-windows-installer.ps1 shows by running the
-# installed copy without it. Any other DLL would be something the agent needs: stop here instead of leaving it out.
+# installed copy without it. WebView2Loader.dll is the settings window's native loader and is installed. Any other DLL would be something the agent needs: stop here instead of leaving it out.
 $loose = Get-ChildItem -LiteralPath (Split-Path $exePath) -Filter *.dll -File -ErrorAction SilentlyContinue |
-    Where-Object { $_.Name -ne 'aspnetcorev2_inprocess.dll' }
+    Where-Object { $_.Name -notin 'aspnetcorev2_inprocess.dll', 'WebView2Loader.dll' }
 if ($loose) { throw "Native libraries next to $exePath ($($loose.Name -join ', ')): add them to [Files] in packaging\windows\PhoneBox.iss." }
+$loader = Join-Path (Split-Path $exePath) 'WebView2Loader.dll'
+if (-not (Test-Path -LiteralPath $loader)) { throw "WebView2Loader.dll is missing next to $exePath" }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 $out = (Resolve-Path -LiteralPath $OutDir).Path
 
-& $iscc "/DAppVersion=$Version" "/DSourceExe=$exePath" "/DSourceNotices=$notices" "/DOutDir=$out" /Qp (Join-Path $root 'packaging\windows\PhoneBox.iss')
+& $iscc "/DAppVersion=$Version" "/DSourceExe=$exePath" "/DSourceNotices=$notices" "/DSourceWebView2Loader=$loader" "/DOutDir=$out" /Qp (Join-Path $root 'packaging\windows\PhoneBox.iss')
 if ($LASTEXITCODE) { throw "Inno Setup failed ($LASTEXITCODE)" }
 
 $setup = Join-Path $out "PhoneBox-$Version-win-x64-setup.exe"

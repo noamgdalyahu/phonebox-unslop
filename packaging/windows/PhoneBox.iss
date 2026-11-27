@@ -9,6 +9,7 @@
 ;   AppVersion     the release version, e.g. 0.9.28
 ;   SourceExe      the published PhoneBoxAgent.exe (signed, when the release signs it)
 ;   SourceNotices  THIRD-PARTY-NOTICES.txt
+;   SourceWebView2Loader  WebView2Loader.dll, next to the published exe
 ;   OutDir         where PhoneBox-<version>-win-x64-setup.exe is written
 
 #ifndef AppVersion
@@ -19,6 +20,9 @@
 #endif
 #ifndef SourceNotices
   #error Pass /DSourceNotices=path\to\THIRD-PARTY-NOTICES.txt
+#endif
+#ifndef SourceWebView2Loader
+  #error Pass /DSourceWebView2Loader=path\to\WebView2Loader.dll
 #endif
 #ifndef OutDir
   #define OutDir "."
@@ -60,6 +64,8 @@ Name: "autostart"; Description: "Start PhoneBox with Windows"; Flags: unchecked
 [Files]
 Source: "{#SourceExe}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#SourceNotices}"; DestDir: "{app}"; Flags: ignoreversion
+; the native loader of the settings window (WebView2); without it the settings open in the browser
+Source: "{#SourceWebView2Loader}"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 ; the same shortcuts scripts\install.ps1 and the tray menu make, so they recognise each other
