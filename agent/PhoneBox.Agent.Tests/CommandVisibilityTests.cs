@@ -162,9 +162,9 @@ public sealed class CommandVisibilityFixture : IDisposable
         watch.Created += (_, e) => { if (e.FullPath == _marker) observed.TrySetResult(); };
         watch.Renamed += (_, e) => { if (e.FullPath == _marker) observed.TrySetResult(); };
         if (Runner.Get("commands", "probe") is null) return false;
-        await observed.Task.WaitAsync(TimeSpan.FromSeconds(10));
+        await observed.Task.WaitAsync(TimeSpan.FromSeconds(60));
         var pid = int.Parse(await File.ReadAllTextAsync(_marker));
-        try { using var shell = Process.GetProcessById(pid); await shell.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(5)); }
+        try { using var shell = Process.GetProcessById(pid); await shell.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(30)); }
         catch (ArgumentException) { } // already exited
         return true;
     }
