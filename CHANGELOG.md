@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 0.9.32 — 2026-11-27
+
+This is **PhoneBox Unslop**, a restyled fork of PhoneBox (MIT). It looks for updates, links to downloads and hosts its
+pairing page in its own repository, [noamgdalyahu/phonebox-unslop](https://github.com/noamgdalyahu/phonebox-unslop),
+not in the original project's.
+
+- Look: the "hairline" theme. A black (dark) or white (light) canvas, 1px hairline borders, corners of 3 to 6 px, one
+  indigo accent, an ink-on-paper primary button, sentence-case labels, no gradient washes or glows, lighter type.
+- Windows: the settings open in their own window (WebView2) instead of a browser tab. Closing the window quits the
+  program, so no port stays open. Starting with Windows (`--tray`) stays in the tray; a second launch raises the window.
+  Without the WebView2 runtime the settings open in the browser as before.
+- Updates: the default update repository, the phone-app download link and the Wi-Fi pairing link point to this fork. A
+  saved copy of the original project as the update repository moves to this fork.
+- The lyrics service no longer receives a project link in its User-Agent.
+
 ## 0.9.31 — 2026-11-27
 
 - Pages: a dimmed **photo background** per page, from the Photo frame's source (a folder or an Immich album). A new

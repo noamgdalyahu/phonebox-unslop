@@ -33,14 +33,14 @@ Statistiques PC, sessions de code IA, musique et commandes tactiles via USB ou W
 Windows, Linux et macOS. Sans root, sans compte PhoneBox et sans service cloud.</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>Essayer la démo</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>Télécharger</b></a> ·
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>Essayer la démo</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>Télécharger</b></a> ·
   <a href="#démarrage-rapide"><b>Démarrage rapide</b></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/ersinkoc/phonebox/actions/workflows/build.yml"><img src="https://github.com/ersinkoc/phonebox/actions/workflows/build.yml/badge.svg" alt="Statut du build"></a>
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><img src="https://img.shields.io/github/v/release/ersinkoc/phonebox?label=release" alt="Dernière version"></a>
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/actions/workflows/build.yml"><img src="https://github.com/noamgdalyahu/phonebox-unslop/actions/workflows/build.yml/badge.svg" alt="Statut du build"></a>
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><img src="https://img.shields.io/github/v/release/noamgdalyahu/phonebox-unslop?label=release" alt="Dernière version"></a>
   <img src="https://img.shields.io/badge/Windows%20%C2%B7%20Linux%20%C2%B7%20macOS-.NET%2010-512bd4" alt="Windows, Linux, macOS; .NET 10">
   <img src="https://img.shields.io/badge/Android-5%2B-3ddc84" alt="Android 5+">
   <a href="../LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="Licence MIT"></a>
@@ -68,13 +68,13 @@ PhoneBox associe une **application Android** plein écran à un léger **agent d
 **Windows 10/11 x64** (PowerShell) :
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 **Linux ou macOS** :
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 L'installation ouvre les paramètres sur <http://127.0.0.1:8765>. Voir le [guide d'installation](SETUP.md).
@@ -83,7 +83,7 @@ L'installation ouvre les paramètres sur <http://127.0.0.1:8765>. Voir le [guide
 
 | USB | Wi-Fi uniquement |
 |---|---|
-| Activez **Options pour les développeurs → Débogage USB** et branchez le câble. | Installez l'APK depuis la [dernière version](https://github.com/ersinkoc/phonebox/releases/latest), activez **Wi-Fi & Tailscale** et scannez le QR code. |
+| Activez **Options pour les développeurs → Débogage USB** et branchez le câble. | Installez l'APK depuis la [dernière version](https://github.com/noamgdalyahu/phonebox-unslop/releases/latest), activez **Wi-Fi & Tailscale** et scannez le QR code. |
 
 ### 3. Personnaliser
 

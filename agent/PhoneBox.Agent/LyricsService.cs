@@ -47,7 +47,7 @@ public sealed partial class LyricsService : IDisposable
             MaxResponseContentBufferSize = 2 * 1024 * 1024, // a song's lyrics are a few KB; a search answer is a short list
         };
         // LRCLIB asks clients to say who they are
-        _http.DefaultRequestHeaders.UserAgent.ParseAdd($"PhoneBox/{AppPaths.Version} (+https://github.com/ersinkoc/phonebox)");
+        _http.DefaultRequestHeaders.UserAgent.ParseAdd($"PhoneBox/{AppPaths.Version}");
     }
 
     /// <summary>

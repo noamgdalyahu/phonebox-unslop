@@ -32,8 +32,8 @@
 Estatísticas do PC, sessões de programação com IA, música e controles por toque via USB ou Wi-Fi.</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>Experimente a demonstração ao vivo</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>Baixar</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>Experimente a demonstração ao vivo</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>Baixar</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="PhoneBox mostrando as páginas de automação, home e planner em três telefones Android"></p>
@@ -58,13 +58,13 @@ Use um telefone Android 5.0 ou posterior (recomenda-se o Android 6 ou posterior)
 No Windows 10/11 x64, execute o comando abaixo no PowerShell.
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 No Linux ou macOS, execute o comando abaixo com seu usuário normal.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 O instalador verifica a soma de verificação da versão e abre a página de configurações. Ele também pode instalar o aplicativo do celular via USB. Execute-o novamente para atualizar ou reparar a instalação, mantendo configurações e pareamentos.

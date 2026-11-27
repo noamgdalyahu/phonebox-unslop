@@ -30,6 +30,12 @@ try { firstInstance = single.WaitOne(waitMs); }
 catch (AbandonedMutexException) { firstInstance = true; }
 if (!firstInstance)
 {
+    // Windows: the running instance raises its window. Elsewhere (or if it cannot be reached) open the settings in the browser.
+    if (OperatingSystem.IsWindows())
+    {
+        try { using var raise = EventWaitHandle.OpenExisting(endpoint.MutexName + ".Show"); raise.Set(); return; }
+        catch (Exception) { }
+    }
     try { System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo($"http://127.0.0.1:{Port}/") { UseShellExecute = true }); } catch { }
     return;
 }
@@ -319,7 +325,7 @@ app.MapPost("/api/pair/start", (ConfigStore cfg, PairingCodes codes) =>
     var hosts = Lan.Addresses();
     var fingerprint = Lan.Fingerprint(lanCert);
     var link = PairingCodes.Link(Environment.MachineName, fingerprint, lanCfg.Port, hosts, code);
-    var apk = $"https://github.com/ersinkoc/phonebox/releases/download/v{AppPaths.Version}/PhoneBox-{AppPaths.Version}.apk";
+    var apk = $"https://github.com/noamgdalyahu/phonebox-unslop/releases/download/v{AppPaths.Version}/PhoneBox-{AppPaths.Version}.apk";
     return Results.Json(new
     {
         enabled = true,

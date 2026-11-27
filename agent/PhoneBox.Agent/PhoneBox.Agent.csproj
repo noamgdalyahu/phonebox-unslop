@@ -13,7 +13,7 @@
     <Product>PhoneBox</Product>
     <Company>PhoneBox</Company>
     <Description>PhoneBox desktop agent: feeds the PhoneBox Android desk panel over USB or Wi-Fi.</Description>
-    <Version>0.9.31</Version>
+    <Version>0.9.32</Version>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
 
@@ -27,6 +27,8 @@
 
   <ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
     <PackageReference Include="NAudio" Version="3.3.0" />
+    <!-- the desktop window: the settings page in a native window (the Evergreen WebView2 runtime ships with Windows 11) -->
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
   </ItemGroup>
 
   <PropertyGroup Condition="!$(TargetFramework.Contains('-windows'))">
@@ -40,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="!$(TargetFramework.Contains('-windows'))">
-    <Compile Remove="Tray.cs;JobObject.cs;AudioControl.cs;MediaMonitor.cs" />
+    <Compile Remove="Tray.cs;AppWindow.cs;JobObject.cs;AudioControl.cs;MediaMonitor.cs" />
     <EmbeddedResource Remove="TrayStrings*.resx" />
   </ItemGroup>
 

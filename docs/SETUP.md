@@ -11,16 +11,16 @@
 **Windows 10/11 x64 or Windows 11 ARM64**: open PowerShell (a normal window, not *Run as administrator*) and paste:
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 **Linux and macOS**: open a terminal and paste (run it as yourself, not with `sudo`):
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
-Setup installs the [latest release](https://github.com/ersinkoc/phonebox/releases/latest) and anything missing:
+Setup installs the [latest release](https://github.com/noamgdalyahu/phonebox-unslop/releases/latest) and anything missing:
 
 1. **Checks the computer**: Windows x64 / ARM64; Linux x64 / ARM64 with glibc; macOS on Apple silicon or Intel.
 2. **Downloads and checks the agent**: the download must match the release's SHA-256 checksums. With the
@@ -68,11 +68,11 @@ and changes nothing.
 To pass options:
 
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1))) -NoPhone
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1))) -NoPhone
 ```
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash -s -- --no-phone
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash -s -- --no-phone
 ```
 
 </details>
@@ -81,12 +81,12 @@ curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | b
 
 - **The Windows agent is not code-signed yet.** [SignPath Foundation](../README.md#code-signing-policy) accepted the project; releases are signed once its release certificate is issued.
   Windows SmartScreen or an antivirus may warn about a new, unsigned program, and some antivirus engines have flagged
-  it ([#69](https://github.com/ersinkoc/phonebox/issues/69)). Setup only installs a file that matches the release
+  it ([#69](https://github.com/noamgdalyahu/phonebox-unslop/issues/69)). Setup only installs a file that matches the release
   checksum. If your antivirus removes `PhoneBoxAgent.exe`, setup says so; restore it from quarantine or report it.
 - **Smart App Control** (Windows 11) blocks programs that are neither signed nor known to Microsoft. The agent is
-  not code-signed yet (signing through SignPath Foundation waits for its release certificate, [#56](https://github.com/ersinkoc/phonebox/issues/56)),
+  not code-signed yet (signing through SignPath Foundation waits for its release certificate, [#56](https://github.com/noamgdalyahu/phonebox-unslop/issues/56)),
   so with Smart App Control on, Windows refuses to start it: "An Application Control policy has blocked this file"
-  ([#69](https://github.com/ersinkoc/phonebox/issues/69)). Setup warns you first, still installs it, and explains
+  ([#69](https://github.com/noamgdalyahu/phonebox-unslop/issues/69)). Setup warns you first, still installs it, and explains
   if Windows blocks it. Please keep Smart App Control on: on older Windows builds it cannot be turned back on without
   resetting Windows. In evaluation mode it blocks nothing yet. On a work or school computer, an AppLocker or group
   policy can block the agent too; its administrator can allow it.
@@ -114,7 +114,7 @@ curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | b
   Privacy & Security › Accessibility* for PhoneBoxAgent; it
   carries over to later updates. Before 0.9.22 the agent was signed ad hoc, and macOS dropped the permission with every
   update, so after updating from an older version allow it once more: remove PhoneBoxAgent there with *−* and add it
-  again, even if it is listed and switched on ([#269](https://github.com/ersinkoc/phonebox/issues/269)).
+  again, even if it is listed and switched on ([#269](https://github.com/noamgdalyahu/phonebox-unslop/issues/269)).
 - **The macOS app lives in the menu bar.** Running as `PhoneBox.app` it has no Dock icon or window; a phone icon in the
   menu bar shows whether the phone is connected and offers Open Settings, Check for Updates (and Install update when
   there is one), Restart Agent, Show Log, Open Config Folder, Start at Login and Quit. Start at Login adds a launchd
@@ -150,7 +150,7 @@ Update a portable copy manually. Wi-Fi pairing below works without Android USB d
   Setup installs the app, or use *Settings › General › Install the phone app* later. Then the phone wakes up and
   opens the panel whenever it is plugged in.
 - **Over Wi-Fi only**, with no developer options or adb: install the APK from the
-  [release page](https://github.com/ersinkoc/phonebox/releases/latest) on the phone. Then on the computer turn on
+  [release page](https://github.com/noamgdalyahu/phonebox-unslop/releases/latest) on the phone. Then on the computer turn on
   *Settings › General › Wi-Fi & Tailscale*, click **Pair a phone over Wi-Fi** and scan the QR code (see
   [Wi-Fi & Tailscale](#wi-fi--tailscale)).
 
@@ -158,7 +158,7 @@ The settings are at <http://127.0.0.1:8765>, on Windows also from the tray icon.
 
 ### Other ways to install
 
-- **Manual download**: the [release](https://github.com/ersinkoc/phonebox/releases/latest) has the signed Android
+- **Manual download**: the [release](https://github.com/noamgdalyahu/phonebox-unslop/releases/latest) has the signed Android
   APK and agents for Windows x64/ARM64, Linux x64/ARM64 and macOS Apple silicon/Intel, with SHA-256 checksums and build
   provenance. Unzip the agent and run it. It can update itself only from the install folder in the table above. On a Mac,
   the `.dmg` holds `PhoneBox.app`: drag it to Applications (or `~/Applications`) and open it. It has no window; the settings
@@ -170,7 +170,7 @@ The settings are at <http://127.0.0.1:8765>, on Windows also from the tray icon.
 - **Scoop** (Windows), which can then put the app on the phone from *Settings › General › Install the phone app*:
 
   ```powershell
-  scoop bucket add phonebox https://github.com/ersinkoc/phonebox
+  scoop bucket add phonebox https://github.com/noamgdalyahu/phonebox-unslop
   scoop install main/adb phonebox/phonebox
   ```
 
@@ -188,12 +188,12 @@ The settings are at <http://127.0.0.1:8765>, on Windows also from the tray icon.
   `JAVA_HOME` set and `ANDROID_HOME` or `android/local.properties` (`sdk.dir`) pointing at the SDK.
 
   ```powershell
-  git clone https://github.com/ersinkoc/phonebox; cd phonebox
+  git clone https://github.com/noamgdalyahu/phonebox-unslop; cd phonebox
   .\scripts\install.ps1 -Apk -Autostart   # add -Serial <id> with several devices; -BuildApk always rebuilds the app
   ```
 
   ```sh
-  git clone https://github.com/ersinkoc/phonebox && cd phonebox
+  git clone https://github.com/noamgdalyahu/phonebox-unslop && cd phonebox
   ./scripts/install.sh --apk --autostart  # systemd user service (Linux) or launchd agent (macOS)
   ```
 
@@ -215,11 +215,11 @@ itself once the agent runs again.
 ### Uninstall
 
 ```powershell
-& ([scriptblock]::Create((irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/scripts/uninstall.ps1))) # add -Purge -Apk
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/scripts/uninstall.ps1))) # add -Purge -Apk
 ```
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/scripts/uninstall.sh | bash -s --   # add --purge --apk
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/scripts/uninstall.sh | bash -s --   # add --purge --apk
 ```
 
 Without options it removes the program and the start-at-login entry and keeps the settings. `-Purge` / `--purge` also
@@ -358,7 +358,7 @@ cable, or a port straight on the computer instead of a hub or a front-panel port
 On some Samsung phones the USB data link restarts each time charging stops, starts or changes speed, and adb sees
 the phone go away for a few seconds. **Protect battery** (charging stops at 85 % and starts again below it) does
 this every few minutes, and fast charging can too. Turning Protect battery off made the drops rare on a Galaxy A31
-(Android 11), but not gone ([#410](https://github.com/ersinkoc/phonebox/issues/410)); there, Wi-Fi with the phone on
+(Android 11), but not gone ([#410](https://github.com/noamgdalyahu/phonebox-unslop/issues/410)); there, Wi-Fi with the phone on
 a charger of its own works without drops.
 </details>
 

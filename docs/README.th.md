@@ -32,8 +32,8 @@
 ดูสถานะพีซี เซสชันเขียนโค้ดด้วย AI และเพลง พร้อมควบคุมด้วยการสัมผัสผ่าน USB หรือ Wi-Fi</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>ลองดูตัวอย่างสด</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>ดาวน์โหลด</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>ลองดูตัวอย่างสด</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>ดาวน์โหลด</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="PhoneBox แสดงหน้าอัตโนมัติ, หน้าบ้าน และหน้าวางแผนบนสาม Android โทรศัพท์"></p>
@@ -58,13 +58,13 @@
 สำหรับ Windows 10/11 x64 ให้รันคำสั่งต่อไปนี้ใน PowerShell
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 สำหรับ Linux หรือ macOS ให้รันคำสั่งต่อไปนี้ด้วยบัญชีผู้ใช้ปกติ
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 สคริปต์ติดตั้งตรวจสอบเช็กซัมของรุ่นที่ดาวน์โหลดแล้วเปิดหน้าการตั้งค่า คุณยังติดตั้งแอปบนโทรศัพท์ผ่าน USB ได้ด้วย รันสคริปต์ซ้ำเพื่ออัปเดตหรือซ่อมแซมโดยเก็บการตั้งค่าและการจับคู่ไว้

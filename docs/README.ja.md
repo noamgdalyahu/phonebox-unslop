@@ -32,8 +32,8 @@
 USB または Wi-Fi で接続し、PC の状態や AI コーディングセッション、音楽を表示。タッチ操作にも対応します。</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>ライブデモを試してみる</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>ダウンロード</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>ライブデモを試してみる</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>ダウンロード</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="3 台の Android スマートフォンに自動化、ホーム、プランナーを表示した PhoneBox"></p>
@@ -58,13 +58,13 @@ Android 5.0 以降のスマートフォン（Android 6 以降を推奨）と、�
 Windows 10/11 x64 では、PowerShell で次のコマンドを実行します。
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 Linux または macOS では、自分のユーザーアカウントで次のコマンドを実行します。
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 セットアップは配布ファイルのチェックサムを検証して設定画面を開きます。USB 経由でスマートフォンアプリをインストールすることもできます。再実行すると、設定やペアリング情報を保持したまま更新や修復ができます。

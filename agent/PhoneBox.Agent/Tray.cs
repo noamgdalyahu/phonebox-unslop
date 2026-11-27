@@ -10,19 +10,24 @@ namespace PhoneBox.Agent;
 public sealed class Tray : IHostedService
 {
     private readonly string SettingsUrl;
+    private readonly string _showEventName;
 
     private readonly IHostApplicationLifetime _life;
     private readonly AdbReverse _adb;
     private readonly ConfigStore _config;
+    private readonly ILogger<Tray> _log;
     private static readonly ResourceManager Strings = new("PhoneBox.Agent.TrayStrings", typeof(Tray).Assembly);
     private Thread? _thread;
     private ApplicationContext? _ctx;
     private Control? _invoker;
     private NotifyIcon? _icon;
+    private AppWindow? _window;
 
-    public Tray(IHostApplicationLifetime life, AdbReverse adb, AgentEndpoint endpoint, ConfigStore config)
+    public Tray(IHostApplicationLifetime life, AdbReverse adb, AgentEndpoint endpoint, ConfigStore config, ILogger<Tray> log)
     {
+        _log = log;
         SettingsUrl = endpoint.SettingsUrl;
+        _showEventName = endpoint.MutexName + ".Show";
         _life = life;
         _adb = adb;
         _config = config;
@@ -73,7 +78,7 @@ public sealed class Tray : IHostedService
         menu.Items.Add(new ToolStripMenuItem($"PhoneBox {AppPaths.Version}") { Enabled = false });
         menu.Items.Add(status);
         menu.Items.Add(new ToolStripSeparator());
-        var settings = new ToolStripMenuItem("", null, (_, _) => OpenUrl(SettingsUrl)) { Font = new Font(menu.Font, FontStyle.Bold) };
+        var settings = new ToolStripMenuItem("", null, (_, _) => ShowSettings()) { Font = new Font(menu.Font, FontStyle.Bold) };
         menu.Items.Add(settings);
         // cancelled while Windows is ending the session (no adb is started then, for at most a minute): nothing to show
         var openPanel = menu.Items.Add("", null, async (_, _) => { try { await _adb.OpenPanelAsync(); } catch (OperationCanceledException) { } });
@@ -108,18 +113,43 @@ public sealed class Tray : IHostedService
             ContextMenuStrip = menu,
             Visible = true,
         };
-        _icon.DoubleClick += (_, _) => OpenUrl(SettingsUrl);
+        _icon.DoubleClick += (_, _) => ShowSettings();
         _adb.StateChanged += () =>
         {
             try { host.BeginInvoke(() => _icon.Text = Tooltip(UiCulture())); } catch { }
         };
+
+        // The settings open in their own window; closing it quits the program, so no port stays open.
+        // Without the WebView2 runtime the settings open in the browser as before.
+        if (AppWindow.RuntimeInstalled()) _window = new AppWindow(SettingsUrl, _icon.Icon, OnWindowClosed, m => _log.LogWarning("{Message}", m));
+        // a second launch (shortcut, Start menu) raises this window instead of opening a tab
+        var raise = new EventWaitHandle(false, EventResetMode.AutoReset, _showEventName);
+        new Thread(() =>
+        {
+            while (raise.WaitOne()) { try { host.BeginInvoke(ShowSettings); } catch { return; } }
+        }) { IsBackground = true, Name = "tray-raise" }.Start();
+        // started with Windows (--tray): stay in the tray until asked
+        if (!Environment.GetCommandLineArgs().Contains("--tray")) host.BeginInvoke(ShowSettings);
 
         Application.Run(_ctx);
         _icon.Visible = false;
         _icon.Dispose();
     }
 
-    private static void OpenUrl(string url)
+    private void ShowSettings()
+    {
+        if (_window is { Failed: false } w) w.Show();
+        else OpenInBrowser(SettingsUrl);
+    }
+
+    /// <summary>Closing the window ends the program. A watchdog makes sure a stuck shutdown cannot keep the ports open.</summary>
+    private void OnWindowClosed()
+    {
+        _life.StopApplication();
+        _ = Task.Run(async () => { await Task.Delay(8000); Environment.Exit(0); });
+    }
+
+    public static void OpenInBrowser(string url)
     {
         try { Process.Start(new ProcessStartInfo(url) { UseShellExecute = true }); } catch { }
     }
@@ -141,6 +171,7 @@ public sealed class Tray : IHostedService
             lnk.TargetPath = Environment.ProcessPath;
             lnk.WorkingDirectory = Path.GetDirectoryName(Environment.ProcessPath);
             lnk.Description = "PhoneBox agent";
+            lnk.Arguments = "--tray"; // start with Windows: tray only, no window
             lnk.Save();
         }
         catch (Exception ex)

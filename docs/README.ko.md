@@ -32,8 +32,8 @@
 USB 또는 Wi-Fi로 연결해 PC 상태, AI 코딩 세션, 음악을 확인하고 터치로 제어할 수 있습니다.</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>라이브 데모를 시도해 보세요</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>다운로드</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>라이브 데모를 시도해 보세요</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>다운로드</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="PhoneBox 3개의 Android 전화기에서 자동화, 홈 및 플래너 페이지를 보여주는 모습"></p>
@@ -58,13 +58,13 @@ Android 5.0 이상의 전화(Android 6 이상이 권장됨)와 지원되는 컴�
 Windows 10/11 x64에서는 PowerShell에서 다음 명령을 실행합니다.
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 Linux 또는 macOS에서는 일반 사용자 계정에서 다음 명령을 실행합니다.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 설치 스크립트는 릴리스 체크섬을 확인하고 설정 페이지를 엽니다. USB로 휴대전화 앱을 설치할 수도 있습니다. 설정과 페어링을 유지하면서 업데이트하거나 복구하려면 스크립트를 다시 실행하세요.

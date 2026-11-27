@@ -32,8 +32,8 @@
 透過 USB 或 Wi-Fi 檢視電腦資訊、AI 程式開發工作階段和音樂，並使用觸控操作。</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>試試現場演示</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>下載</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>試試現場演示</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>下載</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="PhoneBox 顯示自動化、家庭和計劃頁面 Android 電話"></p>
@@ -58,13 +58,13 @@
 在 Windows 10/11 x64 上，請在 PowerShell 執行以下指令。
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 在 Linux 或 macOS 上，請用一般使用者帳號執行以下指令。
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 安裝指令碼會驗證發行檔的總和檢查碼並開啟設定頁面，也能透過 USB 安裝手機應用程式。再次執行可更新或修復安裝，並保留設定與配對。

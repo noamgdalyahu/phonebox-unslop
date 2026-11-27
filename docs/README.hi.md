@@ -32,8 +32,8 @@
 USB या Wi-Fi से जुड़कर PC की स्थिति, AI कोडिंग सेशन और संगीत देखें, और टच से नियंत्रण करें।</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>लाइव डेमो का प्रयास करें</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>डाउनलोड</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>लाइव डेमो का प्रयास करें</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>डाउनलोड</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="PhoneBox तीन Android फोनों पर स्वचालन, घर और प्लानर पृष्ठ दिखा रहा है"></p>
@@ -58,13 +58,13 @@ USB या Wi-Fi से जुड़कर PC की स्थिति, AI क�
 Windows 10/11 x64 पर यह कमांड PowerShell में चलाएँ।
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 Linux या macOS पर यह कमांड अपने सामान्य उपयोगकर्ता खाते से चलाएँ।
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 सेटअप रिलीज़ का चेकसम जाँचता है और सेटिंग पेज खोलता है। यह फ़ोन ऐप को USB से इंस्टॉल भी कर सकता है। सेटिंग और पेयरिंग बनाए रखते हुए अपडेट या मरम्मत के लिए इसे फिर चलाएँ।

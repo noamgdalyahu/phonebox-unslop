@@ -32,8 +32,8 @@
 راقب حالة الحاسوب وجلسات البرمجة بالذكاء الاصطناعي، وتحكّم بالموسيقى باللمس عبر USB أو Wi-Fi.</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>جرب العرض الحي</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>تنزيل</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>جرب العرض الحي</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>تنزيل</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="ثلاثة هواتف Android تعرض صفحات الأتمتة والصفحة الرئيسية والمخطّط في PhoneBox"></p>
@@ -58,13 +58,13 @@
 في Windows 10 أو 11 بمعمارية x64، نفّذ الأمر التالي في PowerShell.
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 في Linux أو macOS، نفّذ الأمر التالي من حسابك العادي.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 يتحقّق برنامج الإعداد من المجموع الاختباري للإصدار ويفتح الإعدادات. يمكنه أيضًا تثبيت تطبيق الهاتف عبر USB. شغّله مجددًا للتحديث أو الإصلاح مع الاحتفاظ بالإعدادات والأجهزة المقترنة.

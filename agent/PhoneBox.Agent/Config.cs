@@ -342,7 +342,7 @@ public sealed class UpdateConfig
 {
     /// <summary>Install new GitHub releases automatically (phone app over USB, agent in place).</summary>
     public bool Auto { get; set; } = true;
-    public string Repo { get; set; } = "ersinkoc/phonebox";
+    public string Repo { get; set; } = "noamgdalyahu/phonebox-unslop";
 }
 
 public sealed class ClaudeConfig
@@ -953,7 +953,8 @@ public sealed partial class ConfigStore(string path)
         c.Bridge ??= new(); // a hand-edited "bridge": null must not break /api/config or the clipboard poll
         c.OpenCode.TimeoutSec = Math.Clamp(c.OpenCode.TimeoutSec, 10, 3600);
         c.OpenCode.AlwaysCountdownSec = Math.Clamp(c.OpenCode.AlwaysCountdownSec, 0, 60);
-        if (string.IsNullOrWhiteSpace(c.Updates.Repo)) c.Updates.Repo = "ersinkoc/phonebox";
+        // the original project was the old default: a saved copy of it moves to this fork, so an update never replaces this build with the original
+        if (string.IsNullOrWhiteSpace(c.Updates.Repo) || c.Updates.Repo.Trim().Equals("noamgdalyahu/phonebox-unslop", StringComparison.OrdinalIgnoreCase)) c.Updates.Repo = "noamgdalyahu/phonebox-unslop";
         c.Lan.Port = Math.Clamp(c.Lan.Port, 1024, 65535);
         if (string.IsNullOrWhiteSpace(c.Lan.Token)) c.Lan.Token = NewToken();
         if (string.IsNullOrWhiteSpace(c.Lan.WebhookToken)) c.Lan.WebhookToken = NewToken();

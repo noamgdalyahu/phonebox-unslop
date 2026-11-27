@@ -32,8 +32,8 @@
 Lihat statistik PC, sesi pemrograman AI, dan musik serta gunakan kontrol sentuh melalui USB atau Wi-Fi.</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>Coba demo langsung</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>Muat turun</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>Coba demo langsung</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>Muat turun</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="PhoneBox menunjukkan otomatisasi, rumah dan halaman perencana pada tiga telepon Android"></p>
@@ -58,13 +58,13 @@ Gunakan telepon Android 5.0 atau lebih baru (Android 6 atau lebih baru direkomen
 Di Windows 10/11 x64, jalankan perintah berikut di PowerShell.
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 Di Linux atau macOS, jalankan perintah berikut sebagai pengguna biasa.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 Skrip pemasangan memeriksa checksum rilis dan membuka halaman pengaturan. Skrip juga dapat memasang aplikasi ponsel melalui USB. Jalankan lagi untuk memperbarui atau memperbaiki pemasangan sambil mempertahankan pengaturan dan perangkat yang tersanding.

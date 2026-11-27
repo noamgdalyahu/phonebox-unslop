@@ -32,8 +32,8 @@
 Статистика ПК, сеанси програмування з ШІ, музика й сенсорне керування через USB або Wi-Fi.</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>Спробувати демонстрацію</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>Звантажити</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>Спробувати демонстрацію</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>Звантажити</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="PhoneBox показує автоматизацію, домашню сторінку та сторінки планувальника на трьох телефонах Android"></p>
@@ -58,13 +58,13 @@
 У Windows 10/11 x64 виконайте цю команду в PowerShell.
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 У Linux або macOS виконайте команду від імені свого користувача.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 Сценарій встановлення перевіряє контрольну суму випуску та відкриває налаштування. Він також може встановити застосунок на телефон через USB. Запустіть його ще раз для оновлення або відновлення зі збереженням налаштувань і сполучень.

@@ -32,8 +32,8 @@
 Stav počítače, relace programování s AI, hudba a dotykové ovládání přes USB nebo Wi-Fi.</p>
 
 <p align="center">
-  <a href="https://ersinkoc.github.io/phonebox/"><b>Vyzkoušejte živé demo</b></a> ·
-  <a href="https://github.com/ersinkoc/phonebox/releases/latest"><b>Stáhnout</b></a>
+  <a href="https://noamgdalyahu.github.io/phonebox-unslop/"><b>Vyzkoušejte živé demo</b></a> ·
+  <a href="https://github.com/noamgdalyahu/phonebox-unslop/releases/latest"><b>Stáhnout</b></a>
 </p>
 
 <p align="center"><img src="hero-0.6.png" width="900" alt="PhoneBox zobrazující stránky automatizace, domova a plánovače na třech telefonech Android"></p>
@@ -58,13 +58,13 @@ Používejte telefon Android 5.0 nebo novější (doporučeno je Android 6 nebo 
 Ve Windows 10/11 x64 spusťte následující příkaz v PowerShellu.
 
 ```powershell
-irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+irm https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.ps1 | iex
 ```
 
 V Linuxu nebo macOS spusťte příkaz pod svým běžným uživatelským účtem.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/noamgdalyahu/phonebox-unslop/main/setup.sh | bash
 ```
 
 Instalační skript ověří kontrolní součet vydání a otevře nastavení. Umí také nainstalovat mobilní aplikaci přes USB. Opětovným spuštěním aktualizujete nebo opravíte instalaci a zachováte nastavení i spárování.
