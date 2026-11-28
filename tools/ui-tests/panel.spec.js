@@ -466,10 +466,10 @@ test('a metric tile and a gauge can show the CPU power', async ({ page }) => {
   });
   await page.reload();
   const tile = page.locator('.w-stat');
-  await expect(tile.locator('.t-label')).toHaveText('CPU power');
+  await expect(tile.locator('.t-label')).toHaveText('CPU POWER');
   await expect(tile.locator('.t-val small')).toHaveText('W');
   await expect(tile.locator('.t-val b')).toHaveText(/^\d+$/);
-  await expect(page.locator('.w-gauge .g-label')).toHaveText('CPU power');
+  await expect(page.locator('.w-gauge .g-label')).toHaveText('CPU POWER');
   expect(errors).toEqual([]);
 });
 

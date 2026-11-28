@@ -237,7 +237,7 @@ test('both settings language selectors stay in sync and Revert restores the save
   await expect(page.locator('#save')).toBeDisabled();
 });
 
-test('a widget title typed in Turkish keeps its own letters (labels are in sentence case)', async ({ page }) => {
+test('a widget title typed in Turkish uses Turkish capitals', async ({ page }) => {
   await page.goto('/panel/');
   await page.evaluate(() => {
     localStorage.clear();
@@ -253,9 +253,9 @@ test('a widget title typed in Turkish keeps its own letters (labels are in sente
   });
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('lang', 'tr');
-  // innerText is the rendered text; the widgets are laid out in order. Titles are no longer forced into capitals.
+  // innerText is the rendered text, so it shows what text-transform made of it; the widgets are laid out in order
   const title = (i) => page.locator('.w-title').nth(i).evaluate((e) => e.innerText.split('\n')[0].trim());
-  await expect.poll(() => title(2)).toBe('içecek');
+  await expect.poll(() => title(2)).toBe('İÇECEK');
 });
 
 

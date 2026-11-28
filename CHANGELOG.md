@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Look: the phone app is back to the original PhoneBox look (large corners, bold and uppercase titles, orange and blue accents). The hairline look stays in the desktop app. The corner radius can still be changed under General → Appearance.
+- Fix: the radio cards in the phone app no longer get an invalid background.
+
 ## 0.9.33 — 2026-11-27
 
 - Look: slightly rounder corners in the phone app (4 to 6 px and 6 to 8 px).

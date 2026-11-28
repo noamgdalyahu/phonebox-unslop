@@ -4,10 +4,6 @@ import { weekStartDay } from './time.js';
 import { invalidateDeckState } from './controls.js';
 import { parseWidgets } from './stack.js';
 
-const KEEP_CAPS = new Set(['CPU', 'GPU', 'RAM', 'VRAM', 'SSD', 'HDD', 'USB', 'FPS', 'DNS', 'VPN']);
-/** Tile labels are stored in capitals (they are translation keys); show them in sentence case, keeping acronyms. */
-const sentenceCase = (s) => String(s).split(' ').map((w, i) => (KEEP_CAPS.has(w) || w.length < 2 || w !== w.toUpperCase() ? w : i === 0 ? w[0] + w.slice(1).toLowerCase() : w.toLowerCase())).join(' ');
-
 function bindProcessLink(box, sortTarget) {
   if (!hasProcessesPage()) return;
   box.style.cursor = 'pointer';
@@ -318,7 +314,7 @@ W.stat = {
     const c = color(m.color);
     box.style.setProperty('--c', c);
     const canvas = h('canvas');
-    const lbl = h('div', 't-label', sentenceCase(tp(m.label)));
+    const lbl = h('div', 't-label', tp(m.label));
     const val = h('b', null, '—'), unit = h('small'), sub = h('div', 't-sub', ' ');
     box.append(canvas, lbl, h('div', 't-val', val, unit), sub);
     if (o.metric === 'cpu' || o.metric === 'ram') bindProcessLink(box, o.metric === 'cpu' ? 'cpu' : 'mem');
@@ -330,7 +326,7 @@ W.stat = {
         val.textContent = v;
         unit.textContent = u;
         const pctVal = m.pct?.(s);
-        lbl.textContent = pctVal != null && m.label === 'RAM' ? `${tp('RAM')} (${Math.round(pctVal)}%)` : sentenceCase(tp(m.label));
+        lbl.textContent = pctVal != null && m.label === 'RAM' ? `${tp('RAM')} (${Math.round(pctVal)}%)` : tp(m.label);
         sub.replaceChildren(h('bdi', null, m.sub?.(s) || ' '));
         chart(canvas, [{ data: hist[m.hist || o.metric] || hist.cpu, color: c, max: m.max(s) }]);
       },
@@ -344,7 +340,7 @@ W.gauge = {
     const m = METRICS[o.metric] || METRICS.cpu;
     box.style.setProperty('--q', color(m.color));
     const dial = h('div', 'g-dial'), pct = h('div', 'g-val'), sub = h('div', 'g-sub');
-    box.append(dial, h('div', 'g-label', sentenceCase(tp(m.label))), sub);
+    box.append(dial, h('div', 'g-label', tp(m.label)), sub);
     dial.append(pct);
     if (o.metric === 'cpu' || o.metric === 'ram') bindProcessLink(box, o.metric === 'cpu' ? 'cpu' : 'mem');
     let svg = null;
